@@ -7,7 +7,7 @@ export const personalInfo: PersonalInfo = {
   linkedin: "https://linkedin.com/in/krishsanghvi",
   github: "https://github.com/krishsanghvi",
   location: "Columbus, OH",
-  title: "Computer Science & Engineering Graduate & AI Researcher",
+  title: "CSE Graduate & AI Researcher",
   summary: "Computer Science and Engineering graduate from The Ohio State University specializing in AI/ML and full-stack development. Currently conducting cutting-edge research at Ohio Supercompute Center on GraphRAG systems for HPC environments. Proven track record of winning prestigious hackathons including Best Use of AI at Carnegie Mellon TartanHacks and delivering impactful solutions at top consulting firms."
 };
 

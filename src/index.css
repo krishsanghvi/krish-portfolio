@@ -24,6 +24,7 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 221.2 83.2% 53.3%;
     --radius: 0.5rem;
+    --navbar-height: 4rem; /* 64px */
   }
 
   .dark {
@@ -58,6 +59,7 @@
   html {
     overflow-x: hidden;
     scroll-behavior: smooth;
+    scroll-padding-top: var(--navbar-height);
   }
   
   body {
@@ -72,6 +74,11 @@
     overflow-x: hidden;
     min-height: 100vh;
     width: 100%;
+  }
+  
+  /* Section offset for navbar */
+  section[id] {
+    scroll-margin-top: var(--navbar-height);
   }
 }
 
@@ -95,6 +102,14 @@
     display: flex;
     width: 100%;
     overflow-x: hidden;
+  }
+  
+  .navbar-offset {
+    padding-top: var(--navbar-height);
+  }
+  
+  .min-h-screen-safe {
+    min-height: calc(100vh - var(--navbar-height));
   }
 }
 
@@ -199,6 +214,12 @@ img {
 @media (max-height: 500px) and (orientation: landscape) {
   .min-h-screen {
     min-height: 100vh;
+  }
+  
+  /* Reduce Hero padding on landscape mobile */
+  .hero-landscape-safe {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 }
 

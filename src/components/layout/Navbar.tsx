@@ -32,8 +32,8 @@ export function Navbar() {
       transition={{ duration: 0.6 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
+          ? "bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg shadow-xl border-b border-gray-200/50 dark:border-gray-700/50"
+          : "bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg border-b border-gray-200/30 dark:border-gray-700/30"
       }`}
     >
       <div className="container mx-auto px-4">
@@ -79,6 +79,7 @@ export function Navbar() {
               variant="ghost"
               size="icon"
               onClick={() => setIsOpen(!isOpen)}
+              className="text-gray-900 dark:text-white"
             >
               {isOpen ? (
                 <X className="h-6 w-6" />
@@ -95,7 +96,7 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white dark:bg-gray-900 rounded-lg mt-2 shadow-lg"
+            className="md:hidden bg-white/98 dark:bg-gray-900/98 backdrop-blur-lg rounded-lg mt-2 shadow-xl border border-gray-200/50 dark:border-gray-700/50"
           >
             <div className="px-4 py-4 space-y-3">
               {navItems.map((item) => (
