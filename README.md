@@ -1,46 +1,204 @@
-# Getting Started with Create React App
+# Krish Sanghvi - Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive portfolio website built with **Vite**, **React**, **TypeScript**, and **Tailwind CSS**, featuring a beautiful Aurora background animation and smooth user interactions.
 
-## Available Scripts
+![Portfolio Preview](https://via.placeholder.com/800x400/4A90E2/FFFFFF?text=Portfolio+Preview)
 
-In the project directory, you can run:
+## 🌟 Features
 
-### `npm start`
+### Design & UI
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Aurora Background Animation**: Eye-catching animated gradient background
+- **Responsive Design**: Optimized for mobile, tablet, and desktop
+- **Dark Mode Ready**: Built-in dark mode support
+- **Smooth Animations**: Framer Motion powered animations and transitions
+- **Modern UI Components**: Built with Radix UI and custom components
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Sections
 
-### `npm test`
+- **Hero Section**: Dynamic introduction with Aurora background
+- **About**: Education details and technical skills showcase
+- **Experience**: Timeline-based work experience display
+- **Projects**: Featured projects with detailed information and links
+- **Contact**: Professional contact information and social links
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Technical Features
 
-### `npm run build`
+- **TypeScript**: Fully typed for better development experience
+- **Component Architecture**: Modular and reusable components
+- **SEO Optimized**: Semantic HTML and meta tags
+- **Performance Optimized**: Lazy loading and optimized animations
+- **Deployment Ready**: Configured for Vercel deployment
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🚀 Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Node.js (v18 or higher)
+- npm or yarn
 
-### `npm run eject`
+### Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. **Clone the repository**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```bash
+   git clone https://github.com/krishsanghvi/krish-portfolio.git
+   cd krish-portfolio
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+2. **Install dependencies**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+   ```bash
+   npm install
+   ```
 
-## Learn More
+3. **Start development server**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```bash
+   npm run dev
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. **Open in browser**
+   Navigate to `http://localhost:5173`
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+The built files will be in the `dist` directory.
+
+## 🛠️ Technology Stack
+
+### Frontend
+
+- **React 18** - UI library
+- **TypeScript** - Type safety
+- **Vite** - Build tool and dev server
+- **Tailwind CSS** - Utility-first CSS framework
+
+### UI & Animation
+
+- **Framer Motion** - Animation library
+- **Radix UI** - Headless UI components
+- **Lucide React** - Icon library
+- **class-variance-authority** - Component variants
+
+### Development Tools
+
+- **ESLint** - Code linting
+- **PostCSS** - CSS processing
+- **Autoprefixer** - CSS vendor prefixes
+
+## 📁 Project Structure
+
+```
+src/
+├── components/
+│   ├── ui/                 # Reusable UI components
+│   │   ├── aurora-background.tsx
+│   │   └── button.tsx
+│   ├── sections/           # Page sections
+│   │   ├── Hero.tsx
+│   │   ├── About.tsx
+│   │   ├── Experience.tsx
+│   │   ├── Projects.tsx
+│   │   └── Contact.tsx
+│   └── layout/             # Layout components
+│       ├── Navbar.tsx
+│       └── Footer.tsx
+├── data/
+│   └── portfolio.ts        # Portfolio data
+├── lib/
+│   └── utils.ts           # Utility functions
+├── types/
+│   └── index.ts           # TypeScript type definitions
+└── App.tsx                # Main app component
+```
+
+## 📝 Customization
+
+### Personal Information
+
+Update your personal details in `src/data/portfolio.ts`:
+
+```typescript
+export const personalInfo: PersonalInfo = {
+  name: "Your Name",
+  email: "your.email@example.com",
+  // ... other details
+};
+```
+
+### Adding Projects
+
+Add new projects to the projects array:
+
+```typescript
+export const projects: Project[] = [
+  {
+    id: "your-project-id",
+    title: "Your Project Title",
+    description: "Project description...",
+    // ... other project details
+  },
+  // ... existing projects
+];
+```
+
+### Styling
+
+- Modify colors in `tailwind.config.js`
+- Update CSS variables in `src/index.css`
+- Customize component styles using Tailwind classes
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+
+1. **Connect GitHub repository to Vercel**
+2. **Configure build settings** (auto-detected)
+   - Framework: Vite
+   - Build Command: `npm run build`
+   - Output Directory: `dist`
+3. **Deploy**
+
+The project includes a `vercel.json` configuration file for optimal deployment.
+
+### Other Platforms
+
+The build output in `dist/` can be deployed to any static hosting service:
+
+- Netlify
+- GitHub Pages
+- AWS S3
+- Google Cloud Storage
+
+## 🎨 Design Inspiration
+
+This portfolio is designed with modern web design principles:
+
+- **Minimalist aesthetic** with focus on content
+- **Professional color scheme** using blues and grays
+- **Consistent spacing and typography** for readability
+- **Subtle animations** that enhance user experience
+- **Mobile-first responsive design**
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 👨‍💻 About the Developer
+
+**Krish Sanghvi** - Computer Science & Engineering Student at The Ohio State University
+
+- 🎓 Graduating May 2025
+- 💼 Seeking full-time software engineering opportunities
+- 🌐 Portfolio: [krish-portfolio.vercel.app](https://krish-portfolio.vercel.app)
+- 💼 LinkedIn: [krishsanghvi](https://linkedin.com/in/krishsanghvi)
+- 🐙 GitHub: [krishsanghvi](https://github.com/krishsanghvi)
+
+---
+
+⭐ **Star this repo if you found it helpful!**
