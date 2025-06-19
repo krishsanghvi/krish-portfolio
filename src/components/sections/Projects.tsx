@@ -5,8 +5,8 @@ import { Button } from "../ui/button";
 
 export function Projects() {
   return (
-    <section id="projects" className="py-20 bg-white dark:bg-gray-800">
-      <div className="container mx-auto px-4">
+    <section id="projects" className="py-20 bg-white dark:bg-gray-800 overflow-hidden">
+      <div className="safe-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -14,15 +14,15 @@ export function Projects() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 text-responsive">
             Featured Projects
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-responsive">
             Here are some of my recent projects that showcase my technical skills and problem-solving abilities.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -30,11 +30,11 @@ export function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+              className="bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow w-full"
             >
-              <div className="p-6">
+              <div className="p-4 lg:p-6">
                 <div className="flex items-start justify-between mb-4">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white leading-tight">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white leading-tight text-responsive flex-1">
                     {project.title}
                   </h3>
                   {project.award && (
@@ -42,7 +42,7 @@ export function Projects() {
                   )}
                 </div>
 
-                <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
+                <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3 text-responsive">
                   {project.description}
                 </p>
 
@@ -50,7 +50,7 @@ export function Projects() {
                   {project.technologies.slice(0, 4).map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-2 py-1 text-xs bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded"
+                      className="px-2 py-1 text-xs bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded break-words"
                     >
                       {tech}
                     </span>
@@ -66,7 +66,7 @@ export function Projects() {
                   {project.achievements.slice(0, 2).map((achievement, achIndex) => (
                     <div key={achIndex} className="flex items-start">
                       <span className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                      <span className="text-sm text-gray-600 dark:text-gray-400">
+                      <span className="text-sm text-gray-600 dark:text-gray-400 text-responsive">
                         {achievement}
                       </span>
                     </div>
@@ -76,21 +76,21 @@ export function Projects() {
                 {project.award && (
                   <div className="mb-4 p-3 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg">
                     <div className="flex items-center">
-                      <Award className="w-4 h-4 text-yellow-600 mr-2" />
-                      <span className="text-sm font-medium text-yellow-800 dark:text-yellow-200">
+                      <Award className="w-4 h-4 text-yellow-600 mr-2 flex-shrink-0" />
+                      <span className="text-sm font-medium text-yellow-800 dark:text-yellow-200 text-responsive">
                         {project.award}
                       </span>
                     </div>
                   </div>
                 )}
 
-                <div className="flex gap-3">
+                <div className="flex flex-col sm:flex-row gap-2 lg:gap-3">
                   {project.links?.github && (
                     <Button
                       variant="outline"
                       size="sm"
                       asChild
-                      className="flex-1"
+                      className="flex-1 min-w-0"
                     >
                       <a
                         href={project.links.github}
@@ -98,8 +98,8 @@ export function Projects() {
                         rel="noopener noreferrer"
                         className="flex items-center justify-center"
                       >
-                        <Github className="w-4 h-4 mr-2" />
-                        Code
+                        <Github className="w-4 h-4 mr-2 flex-shrink-0" />
+                        <span className="truncate">Code</span>
                       </a>
                     </Button>
                   )}
@@ -107,7 +107,7 @@ export function Projects() {
                     <Button
                       size="sm"
                       asChild
-                      className="flex-1"
+                      className="flex-1 min-w-0"
                     >
                       <a
                         href={project.links.demo}
@@ -115,8 +115,8 @@ export function Projects() {
                         rel="noopener noreferrer"
                         className="flex items-center justify-center"
                       >
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Demo
+                        <ExternalLink className="w-4 h-4 mr-2 flex-shrink-0" />
+                        <span className="truncate">Demo</span>
                       </a>
                     </Button>
                   )}
@@ -125,7 +125,7 @@ export function Projects() {
                       variant="outline"
                       size="sm"
                       asChild
-                      className="flex-1"
+                      className="flex-1 min-w-0"
                     >
                       <a
                         href={project.links.presentation}
@@ -133,8 +133,8 @@ export function Projects() {
                         rel="noopener noreferrer"
                         className="flex items-center justify-center"
                       >
-                        <FileText className="w-4 h-4 mr-2" />
-                        Presentation
+                        <FileText className="w-4 h-4 mr-2 flex-shrink-0" />
+                        <span className="truncate">Presentation</span>
                       </a>
                     </Button>
                   )}

@@ -10,13 +10,15 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 function App() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors">
+      <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors overflow-x-hidden">
         <Navbar />
-        <Hero />
-        <About />
-        <Experience />
-        <Projects />
-        <Contact />
+        <main className="w-full overflow-x-hidden">
+          <Hero />
+          <About />
+          <Experience />
+          <Projects />
+          <Contact />
+        </main>
         <Footer />
       </div>
     </ThemeProvider>
