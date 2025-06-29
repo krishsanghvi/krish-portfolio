@@ -6,10 +6,12 @@ import { Experience } from "./components/sections/Experience";
 import { Projects } from "./components/sections/Projects";
 import { Contact } from "./components/sections/Contact";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { CustomCursor } from "./components/ui/CustomCursor";
 
 function App() {
   return (
     <ThemeProvider>
+      <CustomCursor />
       <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors overflow-x-hidden">
         <Navbar />
         <div className="h-16 border-b border-gray-200/30 dark:border-gray-700/30 bg-gradient-to-b from-white/50 to-transparent dark:from-gray-900/50" />

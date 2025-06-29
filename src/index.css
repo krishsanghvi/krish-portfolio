@@ -239,3 +239,45 @@ img {
     print-color-adjust: exact !important;
   }
 }
+
+/* Custom Cursor Animations */
+@keyframes cursorGlow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1.5);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.8);
+  }
+}
+
+/* Hide cursor on specific elements */
+input[type="text"],
+input[type="email"],
+textarea {
+  caret-color: auto;
+}
+
+/* Smooth transitions for interactive elements */
+button,
+a,
+.custom-cursor-project {
+  transition: transform 0.2s ease;
+}
+
+/* Subtle scale on hover for better feedback */
+button:hover,
+a:hover {
+  transform: scale(1.02);
+}
+
+.custom-cursor-project:hover {
+  transform: translateY(-2px);
+}
+
+/* Ensure cursor stays visible over all elements */
+.custom-cursor {
+  pointer-events: none !important;
+  z-index: 10000 !important;
+}
