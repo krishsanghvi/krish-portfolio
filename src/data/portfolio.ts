@@ -8,7 +8,7 @@ export const personalInfo: PersonalInfo = {
   github: "https://github.com/krishsanghvi",
   location: "Columbus, OH",
   title: "CSE Graduate & AI Researcher",
-  summary: "Computer Science and Engineering graduate from The Ohio State University specializing in AI/ML and full-stack development. Currently conducting cutting-edge research at Ohio Supercompute Center on GraphRAG systems for HPC environments. Proven track record of winning prestigious hackathons including Best Use of AI at Carnegie Mellon TartanHacks and delivering impactful solutions at top consulting firms."
+  summary: "Computer Science and Engineering graduate from The Ohio State University specializing in AI/ML and full-stack development. Currently interning at CIPIO.ai working with AI agents and conducting cutting-edge research at Ohio Supercompute Center on GraphRAG systems for HPC environments. Proven track record of winning prestigious hackathons including Best Use of AI at Carnegie Mellon TartanHacks and delivering impactful solutions at top consulting firms."
 };
 
 export const education: Education = {
@@ -77,7 +77,7 @@ export const skills: Skills = {
     "Web Scraping",
     "Code Review",
     "Automated Testing",
-    "Financial APIs",
+    "Supabase",
     "Data Visualization",
     "Compiler Design",
     "Natural Language Processing",
