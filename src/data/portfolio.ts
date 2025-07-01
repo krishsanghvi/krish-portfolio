@@ -89,6 +89,19 @@ export const skills: Skills = {
 
 export const experiences: Experience[] = [
   {
+    id: "cipio-intern",
+    company: "CIPIO.ai",
+    position: "AI and Full Stack Intern",
+    location: "Virtual",
+    duration: "June 2025 – Present",
+    description: [
+      "Achieved 80% reduction in manual email workload by developing an AI agent using Gemini API and webhook automation for reply/follow-up services.",
+      "Enabled real-time executive decision-making by building KPI dashboards in React with Supabase, visualizing key operational metrics across departments."
+    ],
+    technologies: ["Gemini API", "React", "Supabase", "Webhook Automation"],
+    type: "work"
+  },
+  {
     id: "osc-researcher",
     company: "Ohio Supercompute Center (OSC)",
     position: "AI Chatbot Researcher",
