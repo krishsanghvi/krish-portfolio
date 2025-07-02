@@ -3,19 +3,116 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Enhanced mobile viewport configuration -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover" />
+    
+    <!-- Mobile-specific meta tags -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Krish Sanghvi" />
+    <meta name="theme-color" content="#3b82f6" />
+    <meta name="msapplication-navbutton-color" content="#3b82f6" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <!-- Performance and loading optimizations -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="date=no" />
+    <meta name="format-detection" content="address=no" />
+    <meta name="format-detection" content="email=no" />
+    
+    <!-- Preconnect to external domains for faster loading -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/profile.jpg" as="image" type="image/jpeg" />
+    
     <title>Krish Sanghvi - AI Researcher & Full Stack Developer</title>
+    
+    <!-- Enhanced meta descriptions for mobile search -->
     <meta
       name="description"
-      content="Graduate & AI Researcher specializing in AI chatbots, GraphRAG, and full-stack development. Winner of multiple hackathons including TartanHacks and HackOH/O."
+      content="Graduate & AI Researcher specializing in AI chatbots, GraphRAG, and full-stack development. Winner of multiple hackathons including TartanHacks and HackOH/O. View my portfolio and projects."
     />
     <meta
       name="keywords"
-      content="AI Researcher, Full Stack Developer, GraphRAG, React, Python, Machine Learning"
+      content="AI Researcher, Full Stack Developer, GraphRAG, React, Python, Machine Learning, Mobile Developer, Web Developer, Krish Sanghvi"
     />
+    
+    <!-- Open Graph meta tags for social sharing -->
+    <meta property="og:title" content="Krish Sanghvi - AI Researcher & Full Stack Developer" />
+    <meta property="og:description" content="Graduate & AI Researcher specializing in AI chatbots, GraphRAG, and full-stack development. Winner of multiple hackathons." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/profile.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Krish Sanghvi - AI Researcher and Full Stack Developer" />
+    
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Krish Sanghvi - AI Researcher & Full Stack Developer" />
+    <meta name="twitter:description" content="Graduate & AI Researcher specializing in AI chatbots, GraphRAG, and full-stack development." />
+    <meta name="twitter:image" content="/profile.jpg" />
+    
+    <!-- Additional mobile optimizations -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content="Krish Sanghvi" />
+    <link rel="canonical" href="https://krishsanghvi.dev" />
+    
+    <!-- Critical CSS will be inlined here during build -->
+    <style>
+      /* Critical above-the-fold styles for faster initial render */
+      body { 
+        font-family: system-ui, -apple-system, sans-serif; 
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .loading-screen {
+        position: fixed;
+        inset: 0;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        opacity: 1;
+        transition: opacity 0.5s ease-out;
+      }
+      .loading-screen.fade-out {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
   </head>
   <body>
+    <!-- Loading screen for better perceived performance -->
+    <div id="loading-screen" class="loading-screen">
+      <div class="text-white text-center">
+        <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-white mx-auto mb-4"></div>
+        <p>Loading...</p>
+      </div>
+    </div>
+    
     <div id="root"></div>
+    
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Simple loading screen removal script -->
+    <script>
+      window.addEventListener('load', function() {
+        const loadingScreen = document.getElementById('loading-screen');
+        if (loadingScreen) {
+          setTimeout(() => {
+            loadingScreen.classList.add('fade-out');
+            setTimeout(() => {
+              loadingScreen.remove();
+            }, 500);
+          }, 100);
+        }
+      });
+    </script>
   </body>
 </html>
